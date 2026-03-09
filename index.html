@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="random()">санамсаргүй тоо</button>
+    <h2 id="result"></h2>
+    <input type="text" id="check"/>
+    <button onclick="shalgah()">Шалгах</button>
+   <button onclick="tooNemeh(0)">0</button>
+<button onclick="tooNemeh(1)">1</button>
+<button onclick="tooNemeh(2)">2</button>
+<button onclick="tooNemeh(3)">3</button>
+<button onclick="tooNemeh(4)">4</button>
+<button onclick="tooNemeh(5)">5</button>
+<button onclick="tooNemeh(6)">6</button>
+<button onclick="tooNemeh(7)">7</button>
+<button onclick="tooNemeh(8)">8</button>
+<button onclick="tooNemeh(9)">9</button>
+    <script>
+        let num=0;
+        function random(){
+            num=Math.floor(Math.random()*(200000-100000+1))+100000;
+            document.getElementById("result").innerHTML=num;
+            setTimeout(function(){
+                 document.getElementById("result").innerHTML="";
+
+            },60);
+
+        }
+        function shalgah(){
+            if(Number(document.getElementById("check").value)==num){
+                alert("Зөв байна");
+                document.getElementById("check").value="";
+            }else{
+                alert("буруу байна "+num);
+                document.getElementById("check").value="";
+            }
+        }
+        function tooNemeh(too) {
+  
+    document.getElementById("check").value += too;
+}
+    </script>
+</body>
+</html>
